@@ -1,193 +1,64 @@
-# 🚀 Page Pulse API
+# 🚀 PagePulse — URL Audit API
 
-A production-ready URL Audit Service built with **FastAPI**.
+<p align="center">
+  <strong>A Python FastAPI service for analyzing website URLs and retrieving useful technical metadata.</strong>
+</p>
 
-The API analyzes any website URL and returns useful metadata such as:
-
-- HTTP Status Code
-- HTTPS Availability
-- Response Time
-- Server Information
-- Page Title
-- Content Length
-
----
-
-## Features
-
-- FastAPI REST API
-- URL Validation
-- Response Caching
-- Request Logging
-- Rate Limiting
-- Error Handling
-- Docker Support
-- GitHub Actions CI
-- Swagger Documentation
-- Unit Tests
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
+</p>
 
 ---
 
-## Tech Stack
+## 📌 Overview
 
-- Python 3.12
-- FastAPI
-- Uvicorn
-- Requests
-- BeautifulSoup4
-- Pytest
-- SlowAPI
-- Docker
-- GitHub Actions
+PagePulse is a URL auditing API built with FastAPI. It analyzes a website URL and returns useful information about its HTTP response and page metadata.
 
----
+The project demonstrates backend API development, request validation, error handling, automated testing, containerization, and continuous integration.
 
-## Installation
+## ✨ Features
 
-Clone the repository
+- 🔗 URL validation
+- 🌐 HTTP status code detection
+- 🔒 HTTPS availability checks
+- ⏱️ Response-time measurement
+- 🖥️ Server information retrieval
+- 📄 Page title extraction
+- 📏 Content-length reporting
+- ⚡ Response caching
+- 🛡️ Rate limiting and request logging
+- ⚠️ Error handling
+- 🐳 Docker support
+- 🧪 Automated tests with Pytest
+- 🔄 GitHub Actions CI workflow
+- 📚 API documentation through FastAPI
 
-```bash
-git clone https://github.com/yourusername/PagePulse.git
-```
+## 🛠️ Technology Stack
 
-Move into the project
+| Category | Technologies |
+|---|---|
+| Language | Python |
+| API Framework | FastAPI |
+| HTTP Requests | Requests |
+| HTML Parsing | BeautifulSoup4 |
+| Testing | Pytest |
+| Containerization | Docker |
+| CI/CD | GitHub Actions |
 
-```bash
-cd PagePulse
-```
+## 📂 Project Structure
 
-Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Linux / Mac
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-Run server
-
-```bash
-uvicorn app.main:app --reload
-```
-
----
-
-## API Documentation
-
-Swagger UI
-
-```
-http://127.0.0.1:8000/docs
-```
-
----
-
-## Example Request
-
-POST
-
-```
-/audit
-```
-
-Body
-
-```json
-{
-    "url":"https://example.com"
-}
-```
-
-Example Response
-
-```json
-{
-  "success": true,
-  "data": {
-    "url": "https://example.com",
-    "status_code": 200,
-    "https": true,
-    "response_time_ms": 123.45,
-    "title": "Example Domain",
-    "server": "cloudflare",
-    "content_length": 559,
-    "cached": false
-  }
-}
-```
-
----
-
-## Running Tests
-
-```bash
-python -m pytest
-```
-
----
-
-## Docker
-
-Build
-
-```bash
-docker build -t pagepulse .
-```
-
-Run
-
-```bash
-docker run -p 8000:8000 pagepulse
-```
-
----
-
-## Project Structure
-
-```
+```text
 PagePulse/
-│
+├── .github/
+│   └── workflows/
 ├── app/
-│   ├── main.py
-│   ├── routes.py
-│   ├── models.py
-│   ├── audit.py
-│   ├── cache.py
-│   ├── limiter.py
-│   ├── logger.py
-│   ├── config.py
-│   ├── responses.py
-│   ├── exceptions.py
-│   └── utils.py
-│
 ├── tests/
-├── .github/workflows/
+├── .dockerignore
 ├── Dockerfile
-├── requirements.txt
 ├── pytest.ini
+├── requirements.txt
 └── README.md
-```
-
----
-
-## Author
-
-Shrikant Pawar
